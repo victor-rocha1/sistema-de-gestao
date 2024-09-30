@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS users (
 conn.commit()
 
 # Função para registrar usuário
-def register_user():
+def register():
     username = entry_username.get()
     password = entry_password.get()
 
@@ -31,7 +31,7 @@ def register_user():
         entry_password.delete(0, tk.END)
 
 # Função para login de usuário
-def login_user():
+def login():
     username = entry_username.get()
     password = entry_password.get()
 
@@ -46,7 +46,7 @@ def login_user():
 # Interface Tkinter
 janela = tk.Tk()
 janela.title("Modular Life")
-janela.geometry("300x250")  # Tamanho da janela
+janela.geometry("400x350")  # Tamanho da janela
 
 # Estilo básico
 janela.configure(bg="#f0f0f0")  # Cor de fundo
@@ -69,11 +69,11 @@ entry_password = tk.Entry(janela, show="*", width=30)
 entry_password.pack(pady=5)
 
 # Botão de login
-button_login = tk.Button(janela, text="Login", command=login_user, bg="#4CAF50", fg="white", width=10)
+button_login = tk.Button(janela, text="Login", command=login, bg="#4CAF50", fg="white", width=10)
 button_login.pack(pady=10)
 
 # Botão de registrar
-button_register = tk.Button(janela, text="Registrar", command=register_user, bg="#2196F3", fg="white", width=10)
+button_register = tk.Button(janela, text="Registrar", command=register, bg="#2196F3", fg="white", width=10)
 button_register.pack(pady=10)
 
 # Loop para rodar a interface
